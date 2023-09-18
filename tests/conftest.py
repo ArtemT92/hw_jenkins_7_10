@@ -19,11 +19,9 @@ def browser_managment():
     browser.config.window_width = 900
     browser.config.window_height = 800
 
-    yield
-
-    browser.quit()
 
 
+@pytest.fixture(scope='function', autouse=True)
 def setup_browser(request):
     browser_version = "100.0"
     options = Options()
