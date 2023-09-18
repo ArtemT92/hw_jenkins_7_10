@@ -2,7 +2,14 @@ from selene import browser, have
 import os
 from tests.conftest import RESOURCE_PATH
 from hw_jenkins_7_10.pages.user import User
+import allure
+from allure_commons.types import Severity
 
+@allure.tag("web")
+@allure.severity(Severity.CRITICAL)
+@allure.label("owner", "artemtrunilin")
+@allure.feature("Задачи в репозитории")
+@allure.link("https://github.com", name="Testing")
 
 class RegistartionPage:
     def open(self):
