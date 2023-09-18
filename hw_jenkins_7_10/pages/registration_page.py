@@ -29,7 +29,7 @@ class RegistartionPage:
     def fill_email(self, value):
         browser.element('#userEmail').type(value)
 
-    @allure.step('Выбираем пол {value}.')
+    @allure.step('Выбираем пол')
     def fill_gendare(self):
         browser.element('[for="gender-radio-1"').click()
 
@@ -48,11 +48,11 @@ class RegistartionPage:
     def fill_subject(self, value):
         browser.element('#subjectsInput').type(value).press_enter()
 
-    @allure.step('Выбор хобби {value}.')
+    @allure.step('Выбор хобби')
     def fill_hobbies(self):
         browser.element('[for="hobbies-checkbox-1"]').click()
 
-    @allure.step('Прикрепляем файл {name}.')
+    @allure.step('Прикрепляем файл {file_name}.')
     def choose_picture(self, file_name):
         browser.element('[id="uploadPicture"]').send_keys(os.path.join(RESOURCE_PATH, file_name))
 
