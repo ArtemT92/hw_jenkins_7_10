@@ -13,18 +13,17 @@ print(PROJECT_ROOT_PATH)
 RESOURCE_PATH = os.path.abspath(os.path.join(PROJECT_ROOT_PATH, 'resources'))
 
 
-# @pytest.fixture(scope='function', autouse=True)
-# def browser_managment():
-#     browser.config.base_url = 'https://demoqa.com/automation-practice-form'
-#     browser.config.window_width = 900
-#     browser.config.window_height = 800
-#
-#
-#     yield
-#     browser.quit()
-
-
 @pytest.fixture(scope='function', autouse=True)
+def browser_managment():
+    browser.config.base_url = 'https://demoqa.com/automation-practice-form'
+    browser.config.window_width = 1920
+    browser.config.window_height = 1028
+
+    yield
+    browser.quit()
+
+
+@pytest.fixture(scope='function')
 def setup_browser(request):
     browser_version = "100.0"
     options = Options()
