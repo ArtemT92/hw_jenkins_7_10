@@ -12,6 +12,7 @@ from allure_commons.types import Severity
 @allure.feature("Задачи в репозитории")
 @allure.link("https://github.com", name="Testing")
 
+
 class RegistartionPage:
     @allure.step('Открываем форму регистрации.')
     def open(self):
