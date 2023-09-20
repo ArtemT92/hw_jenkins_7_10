@@ -49,5 +49,3 @@ def setup_browser(request):
     attach.add_video(browser)
 
     browser.quit()
-
-
