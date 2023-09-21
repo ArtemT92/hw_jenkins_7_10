@@ -20,8 +20,6 @@ class RegistartionPage:
     def open(self):
         browser.open('/')
 
-    def __init__(self):
-        self.browser = browser
 
     @allure.step('Вводим имя пользователя {value}.')
     def fill_first_name(self, value):

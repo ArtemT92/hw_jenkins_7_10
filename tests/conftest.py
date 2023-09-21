@@ -18,10 +18,6 @@ def browser_managment():
     browser.config.base_url = 'https://demoqa.com/automation-practice-form'
     browser.config.window_width = 1920
     browser.config.window_height = 1028
-
-
-@pytest.fixture(scope='function')
-def setup_browser(request):
     browser_version = "100.0"
     options = Options()
     selenoid_capabilities = {
@@ -39,7 +35,8 @@ def setup_browser(request):
     )
 
     browser.config.driver = driver
-    yield browser
+
+    yield
 
     attach.add_screenshot(browser)
     attach.add_logs(browser)
