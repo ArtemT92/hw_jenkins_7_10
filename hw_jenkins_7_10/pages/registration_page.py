@@ -1,4 +1,5 @@
 from selene import browser, have
+from selene.support.shared import browser
 import os
 from tests.conftest import RESOURCE_PATH
 from hw_jenkins_7_10.pages.user import User
@@ -11,7 +12,6 @@ from allure_commons.types import Severity
 @allure.label("owner", "artemtrunilin")
 @allure.feature("Задачи в репозитории")
 @allure.link("https://github.com", name="Testing")
-
 
 class RegistartionPage:
     @allure.step('Открываем форму регистрации.')
