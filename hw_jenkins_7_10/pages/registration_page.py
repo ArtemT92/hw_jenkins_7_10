@@ -1,8 +1,10 @@
 from selene import browser, have
 from selene.support.shared import browser
 import os
+
 from tests.conftest import RESOURCE_PATH
 from hw_jenkins_7_10.pages.user import User
+
 import allure
 from allure_commons.types import Severity
 
@@ -17,6 +19,9 @@ class RegistartionPage:
     @allure.step('Открываем форму регистрации.')
     def open(self):
         browser.open('/')
+
+    def __init__(self):
+        self.browser = browser
 
     @allure.step('Вводим имя пользователя {value}.')
     def fill_first_name(self, value):
