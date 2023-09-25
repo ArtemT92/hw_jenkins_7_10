@@ -18,9 +18,8 @@ class RegistartionPage:
     @allure.step('Открываем форму регистрации.')
     def open(self):
         browser.open('/')
-
-    browser.execute_script('document.querySelector("#fixedban").remove()')
-    browser.element('footer').execute_script('element.remove()')
+        browser.execute_script('document.querySelector("#fixedban").remove()')
+        browser.element('footer').execute_script('element.remove()')
 
     @allure.step('Вводим имя пользователя {value}.')
     def fill_first_name(self, value):
