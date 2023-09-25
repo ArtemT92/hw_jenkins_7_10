@@ -14,12 +14,13 @@ from allure_commons.types import Severity
 @allure.label("owner", "artemtrunilin")
 @allure.feature("Задачи в репозитории")
 @allure.link("https://github.com", name="Testing")
-
 class RegistartionPage:
     @allure.step('Открываем форму регистрации.')
     def open(self):
         browser.open('/')
 
+    browser.execute_script('document.querySelector("#fixedban").remove()')
+    browser.element('footer').execute_script('element.remove()')
 
     @allure.step('Вводим имя пользователя {value}.')
     def fill_first_name(self, value):
